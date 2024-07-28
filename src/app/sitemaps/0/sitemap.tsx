@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap[]> {
   const start = 1;
-  const end = 5000;
+  const end = 2000;
   interface ApiResponse {
     data: {
       data: []; // Adjusted to match the actual structure
