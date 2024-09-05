@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap[]> {
   const start = 1;
-  const end = 2000;
+  const end = 3000;
   interface ApiResponse {
     data: {
       data: []; // Adjusted to match the actual structure
@@ -12,10 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap[]> {
 
   try {
     const res = await fetch(
-      `https://us-east-1.aws.data.mongodb-api.com/app/aptitude_tracker_api-fjroz/endpoint/sitemap?start=${start}&end=${end}`,
-      {
-        cache: "no-store", // Prevents caching and always fetches fresh data
-      }
+      `https://us-east-1.aws.data.mongodb-api.com/app/aptitude_tracker_api-fjroz/endpoint/sitemap?start=${start}&end=${end}`
     );
     if (!res.ok) {
       throw new Error("Network response was not ok");
