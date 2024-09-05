@@ -12,7 +12,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap[]> {
 
   try {
     const res = await fetch(
-      `https://us-east-1.aws.data.mongodb-api.com/app/aptitude_tracker_api-fjroz/endpoint/sitemap?start=${start}&end=${end}`
+      `https://us-east-1.aws.data.mongodb-api.com/app/aptitude_tracker_api-fjroz/endpoint/sitemap?start=${start}&end=${end}`,
+      {
+        cache: "no-store", // Prevents caching and always fetches fresh data
+      }
     );
     if (!res.ok) {
       throw new Error("Network response was not ok");
